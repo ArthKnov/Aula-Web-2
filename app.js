@@ -48,6 +48,22 @@ app.get("/editar/:id", function(req, res){
     )
 })
 
+app.post("/atualizar", function(req, res){
+    post.update({
+        nome: req.body.nome,
+        telefone:req.body.telefone,
+        origem:req.body.origem,
+        data_contato:req.body.data_contato,
+        observacao:req.body.observacao
+        
+    },{where: {'id': req.body.id}}).then(function(){
+        console.log("Dados Atualizados com sucesso!")
+        res.send("Dados Atualizados com sucesso!")
+    }).catch(function(){
+        console.log("Erro ao atualizar os dados na entidade")
+    })
+})
+
 app.listen(8083, function(){
     console.log("Servidor Ativo!")
 })
