@@ -44,7 +44,8 @@
                 <p>
          {{#each posts}}
                 {{#dataValues}}
-                    <form action="" method="POST">
+                    <form action="/atualizar" method="POST">
+                    <input type="hidden" name="id" class="form-control" id="id" value="{{id}}">
                         <div class="mb-3 text-start">
                             <label class="form-label">Nome:</label>
                             <input type="name" name="nome" class="form-control" id="nome" value="{{nome}}">
